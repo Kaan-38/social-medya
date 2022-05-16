@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<style type="text/css">
+  body {background:#aeaeae; box-shadow: 0 0 12px #aeaeae;}
+  body::-webkit-scrollbar{width: 5px; background: #477ac4; box-shadow: 0 0 20px #477ac4;}
+   *{margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; font-weight: bold;}
+  .container-ortala {position: relative; display: flex; align-items: center; justify-content: center;}
+  .container-kapsam {position: relative; width: 90%; height: 790px;  top: 14px; display: flex;border-radius: 10px; justify-content: space-between;}
+  nav {width: 19%; height:auto; background:#477ac4; box-shadow: 0 0 14px  #477ac4;  position: relative; border-radius: 10px; }
+    nav .me-card {text-align: center; position: relative; cursor:pointer; color: white; text-shadow: 0 0 3px white; width:100%; height:auto; padding-bottom: 26px; border-bottom: 2px solid white; display:flex; flex-direction: column; align-items: center; justify-content: center;}
+   nav .me-card img {width:92px; height:92px; border-radius: 60px; box-shadow: 0 0 10px white; object-fit: cover;}
+   nav .me-card span {line-height:28px; position: relative; top: 12px;}
+   nav .me-card span h4 {opacity: 0.8;}
+   nav .me-card span div  {display: flex; text-align: center;  cursor: pointer;}
+   nav .me-card span div label {margin:15px; line-height:16px; font-size: 19px;}
+
+
+  .nav-menü {color: white; cursor: pointer; position: relative; padding-bottom: 18px; top: 18px; }
+  .nav-menü li {position: relative; list-style: none; display: flex; line-height:66px; align-items: center;}
+  .nav-menü li.active,.nav-menü li:hover {background-color: white; box-shadow: 0 0 20px white;}
+  .nav-menü li.active ion-icon, .nav-menü li:hover ion-icon {color:#477ac4;}
+  .nav-menü .border-bottom.active ,.nav-menü .border-bottom:hover {border-radius:0 0 10px 10px;}
+  .nav-menü li.active h4, .nav-menü li:hover h4 {color:#477ac4; text-shadow: 0 0 3px #477ac4;}
+  .nav-menü li ion-icon {font-size: 37px; position: absolute; left: 10px;}
+  .nav-menü li h4 {text-shadow: 0 0 3px white; position: relative; left: 70px;}
+  .nav-menü li span {width: 6px; height: 46px;background:#477ac4; box-shadow:0 0 16px #477ac4; position: absolute; left: 0; display: none;}
+  .nav-menü li.active span, .nav-menü li:hover span {display: block;}
+
+  section {width:80%; height: 790px; background: white; border-radius: 10px; box-shadow: 0 0 20px white; position: relative;}
+  section .section-header {width: 100%; height: 70px; border-bottom: 3px solid #477ac4; display: flex; align-items: center; justify-content: space-between;}
+  section .section-header .section-header-input{width: 250px; height:32px; box-shadow: 0 0 10px #477ac4; position: relative; display: flex; justify-content: space-between;align-items: center; border-radius: 5px; margin-left: 28px;}
+  section .section-header .section-header-input input {width:86%; height:88%; border-style: none; outline: none; color: #477ac4; text-shadow: 0 0 2px #477ac4; font-size: 15px;}
+  section .section-header .section-header-input input::placeholder {color:#477ac4; text-shadow: 0 0 2px #477ac4; position: relative; left: 2px;}
+  section .section-header .section-header-input ion-icon {color:#477ac4; font-size: 24px; position: relative; left: 2px;}
+
+
+  section .section-header-right label {position: relative; display:inline-block; margin: 0px; align-items: center; cursor: pointer; margin-right: 28px;}
+  section .section-header-right label ion-icon {font-size: 30px; color: #477ac4;}
+  section .section-header-right label div {display: flex;}
+  section .section-header-right label div span {display:flex; align-items: center; width: 162px; height: 40px; justify-content:center; background: #477ac4; box-shadow: 0 0 12px #477ac4; border-radius: 5px; color: white; text-shadow: 0 0 2px white; cursor: pointer;}
+  section .section-header-right label div span:hover {transform: scale(1.03);  }
+   section .section-header-right label div span ion-icon {position: relative; left: -3px; color: white;}
+
+
+
+
+
+    .story {position:relative; width:100%; height:175px; border-bottom: 4px solid #477ac4; overflow: scroll hidden; display: flex; align-items: center;}
+    .story label{position: relative; text-align: center; cursor: pointer; margin-left: 14px; margin-right:70px; list-style: none; top: 24px;}
+    .story label h4 {color:#477ac4; text-shadow: 0 0 2px #477ac4;}
+    .story label img {width: 90px; height: 90px; border-radius: 50%; box-shadow:0 0 12px #477ac4; position: relative;}
+    .story::-webkit-scrollbar {display: none;}
+  section h2 {position:sticky;   left:520px; color:white; background: #477ac4; box-shadow: 0 0 12px #477ac4; width: 130px; height: 33px; border-radius: 6px; top:80px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .story h2:hover {transform: scale(1.03);}
+   section .stori {position:absolute;top: 76px; left: 10px;}
+ 
+
+
+
+
+
+
+  .post-kapsa {position: relative; width: 100%; height:450px; display: flex; justify-content: space-between;  top: 10px; border-bottom: 4px solid #477ac4;}
+  .post-kapsa h2 {position:absolute; left: 10px; color:white; background: #477ac4; box-shadow: 0 0 12px #477ac4; width: 130px; height: 33px; border-radius: 6px; top:0px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .post-kapsa h2:hover {transform: scale(1.03);}
+  
+  .post {position: relative; width: 100%; height:auto; position: relative;  top: 44px; left: 13px;}
+   .post label .post-like {display: flex; justify-content: space-between; width: 70%; position: relative; top:12px;}
+  .post-kapsa .post img {width:70%; height: 74%;  border-radius: 10px;}
+  .post-kapsa .post label .post-like span {display: flex; align-items: center; cursor: pointer;}
+  #yön::before {content: ''; width:0px; height:0px; border-width: 11px; border-style: solid; border-color:#477ac4 transparent transparent transparent; position:absolute; transform: rotate(0deg); left:13px; top: -15px;}
+  .post-kapsa .post label .post-like span img {width: 46px; height: 46px; border-radius: 50%; box-shadow: 0 0 12px #477ac4;}
+  .post-kapsa .post label .post-like span h4{ color: #477ac4; text-shadow:0 0 3px #477ac4; position: relative; left: 4px;}
+  .post-kapsa .post label .post-like span ion-icon {color: black; font-size: 27px;}
+  .post-kapsa .post label .post-like span h5 {color:#477ac4; text-shadow: 0 0 3px #477ac4;}
+  .post-like-kapsam {display: flex; }
+  .post-like-kapsam span {margin: 6px;}
+   @media only screen and (max-width: 1600px) {
+ 
+    nav {width: 23%;}
+    section {width: 75%;}
+    
+   }
+     @media only screen and (max-width: 1440px) {
+  
+    nav {width: 25%;}
+    section {width: 73%;}
+    .post-kapsa .post img {width:85%;}
+     .post label .post-like {width: 85%;}
+    
+   }
+     @media only screen and (max-width: 1210px) {
+
+    nav {width: 28%;}
+    section {width: 70%;}
+    .post-kapsa .post label .post-like span h5 {font-size: 11.5px;}
+    .post-kapsa .post label .post-like span ion-icon{font-size: 19px;}
+    .post-kapsa .post label .post-like span h4{font-size: 13px;}
+    .post-kapsa .post label .post-like span img{width: 37px; height: 37px;}
+   }
+     @media only screen and (max-width: 1080px) {
+   
+    nav {width: 32%;}
+    section {width: 66%;}
+    section .section-header-right label{margin-right: 10px;}
+    section .section-header .section-header-input {width: 210px;}
+   }
+       @media only screen and (max-width: 1000px) {
+     nav {width: 34%;}
+    section {width: 64%;}
+     .post-kapsa{flex-direction: column; height:auto; border: 5px solid white;}
+     .post-kapsa .post img {width:300px;}
+     .post label .post-like {width: 300px;}
+     section {height:1880px;}
+     .post {margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+  .post-kapsa .post label .post-like span ion-icon{font-size: 29px;}
+    .post-kapsa .post label .post-like span h4{font-size: 19px;}
+    .post-kapsa .post label .post-like span img{width: 45px; height: 45px;}
+    .post-kapsa .post label .post-like span h5 {font-size: 15px;}
+    .story label img  {width:70px; height:70px; border-radius: 50%;}
+    section .section-header-right label ion-icon{font-size: 25px;}
+     section .section-header-right label div span  {width: 120px; font-size: 14px;}
+    .story label {margin-right: 30px;}
+   }
+   @media only screen and (max-width: 840px){
+    
+    section .section-header .section-header-input{width: 174px;}
+   }
+   @media only screen and (max-width: 740px){
+  
+    section .section-header .section-header-input{width: 144px; margin-left:5px;}
+    section .section-header-right label{margin-right:5px;}
+    
+
+   }
+   @media only screen and (max-width:900px){
+       nav .me-card span div label{font-size: 15px; margin:16px;}
+   }
+    @media only screen and (max-width:760px){
+    
+       nav .me-card h3, nav .me-card h4 , nav .me-card div label {display: none;}
+       nav .me-card span img {width:50px ; height:50px;}
+       nav.active .me-card span img {width:90px ; height:90px;}
+       nav {width:60px; position: absolute; z-index: 1000;}
+       nav.active {width: 240px;}
+       nav.active .me-card h3,nav.active .me-card h4 , nav.active .me-card div label {display: block;}
+       .nav-menü h4 {visibility: hidden;}
+       nav.active .nav-menü h4 {visibility: visible;}
+       nav .me-card span div label{font-size: 15px; margin:8px;}
+       nav.active .me-card span div label{font-size: 17.5px; margin:10px;}
+       
+       section {width:85%; margin-left:80px; }
+       .container-kapsam {width: 94%;}
+   }
+     @media only screen and (max-width:600px){
+    
+      nav {left:3px;}
+       .container-kapsam {width:100%;}
+       section {width:80%; margin-left:79px; }
+     }
+</style>
+</head>
+<body>
+<div class="container-ortala">
+  <div class="container-kapsam">
+    <nav>
+  <div class="me-card">
+     <span><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGYTfDVuTekdw/profile-displayphoto-shrink_100_100/0/1646331015779?e=1657756800&v=beta&t=LeCIJ6wR3jlhJNduoG4SvgVcdhYQHundIIKnFoCL9tM" class="nav-open"></span>
+     <span><h3>KAAN ŞAHİN</h3></span>
+     <span><h4>@Kaan-38</h4></span>
+     <span>
+       <div>
+        <label><h5>54</h5><h6>POST</h6></label>
+       <label><h5>17K</h5><h6>FOLLOWERS</h6></label>
+       <label><h5>22</h5><h6>FOLLOWİNG</h6></label>
+       </div>
+     </span>
+  </div>
+
+  <div class="nav-menü">
+     <li class="active"><ion-icon name="home-outline"></ion-icon><h4>HOME</h4><span></span></li>
+     <li><ion-icon name="search"></ion-icon><h4>EXPLORE</h4><span></span></li>
+     <li><ion-icon name="notifications-outline"></ion-icon><h4>NOTİFİCATİONS</h4><span></span></li>
+     <li><ion-icon name="chatbox-ellipses-outline"></ion-icon><h4>MESSAGES</h4><span></span></li>
+     <li><ion-icon name="person-outline"></ion-icon><h4>PROFİLE</h4><span></span></li>
+     <li><ion-icon name="stats-chart"></ion-icon><h4>STATS</h4><span></span></li>
+     <li><ion-icon name="settings-outline"></ion-icon><h4>SETTİNGS</h4><span></span></li>
+     <li class="border-bottom"><ion-icon name="log-out-outline"></ion-icon><h4>LOGOUT</h4><span></span></li>
+  </div>
+</nav>
+
+   
+   <section>
+    <span class="stori"><h2>STORİES</h2></span>
+    <div class="section-header">
+
+   <div class="section-header-input">
+    <ion-icon name="search"></ion-icon>
+    <input type="search" name="" placeholder="Search messages..">
+  </div>
+
+
+  <div class="section-header-right">
+      <label><ion-icon name="notifications-outline"></ion-icon></label>
+      <label><ion-icon name="mail-unread-outline"></ion-icon></label>
+      <label>
+        <div>
+          <span><ion-icon name="add-circle-outline"></ion-icon><h4>ADD PHOTO</h4></span>
+        </div>
+      </label>
+  </div>
+ </div>
+
+
+  <div class="story">
+    
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4D0BAQE3aOp3cdsq6A/company-logo_200_200/0/1641456287876?e=1660780800&v=beta&t=AmBGmHdDJYNTqpAjNCCqX2IwTuVH_-iVXrg_EewfVUA"><h4>CLARUSWAY</h4></label>
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4D03AQGPj6EU-cbt2g/profile-displayphoto-shrink_100_100/0/1645988964306?e=1657756800&v=beta&t=_sP4DEKtY1SRYq7V3wrgYe_smvcnK52KjQwxsq9aNMc"><h4>STEPHAN</h4></label>
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4E03AQFGsEk7g-nQjg/profile-displayphoto-shrink_100_100/0/1575891316341?e=1657756800&v=beta&t=HvydHkFQIouynibdDhTxu0OoSJ0s5gy3qN3WoGmofe4"><h4>ALEX</h4></label>
+
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4E03AQELlZAx3ZmQjg/profile-displayphoto-shrink_100_100/0/1560946142781?e=1657756800&v=beta&t=UonnOykqMkPJsQUN4ExziPzAwB5sK8rTbKVI2CdpRb0"><h4>OLİVİA</h4></label>
+
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4E03AQFBBdcCYjK1QA/profile-displayphoto-shrink_100_100/0/1651148593484?e=1657756800&v=beta&t=tNrVffYWYBQ0w3VGkm8gmJgxDFsw_F5S8i5lLDj2yNw"><h4>MİCHEL</h4></label>
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGCygRoQEkEQg/profile-displayphoto-shrink_100_100/0/1567830742641?e=1657756800&v=beta&t=ODOmfiewEyUVup9EIL4YsW2JeZmP51lRymNEJHEfOxw"><h4>JAMES</h4></label>
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4D03AQF-OciT2aOWeg/profile-displayphoto-shrink_100_100/0/1516239455010?e=1657756800&v=beta&t=1i1wNux-dswqUfJYii0jNicLDfLiGr-hAqt8WZ_aHI4"><h4>STEVE</h4></label>
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C4D03AQFHlBm75Bi84g/profile-displayphoto-shrink_100_100/0/1606115364001?e=1657756800&v=beta&t=djoWTcQJ4IM02IUYRAuhjMwjE59euUB5kI9m4EdmISE"><h4>RİCHARD</h4></label>
+
+    <label><img src="https://media-exp1.licdn.com/dms/image/C5603AQEWJYB1y8WFDw/profile-displayphoto-shrink_100_100/0/1602596551830?e=1658361600&v=beta&t=ajj1uv8H9MykzpGMNk9Z4VAN78kzsVXxsOrYCIui6W8"><h4>ADRİAN</h4></label>
+  </div>
+
+
+
+
+<div class="post-kapsa">
+  <h2>POST</h2>
+ <div class="post">
+     <label>
+      <img src="https://images.pexels.com/photos/358238/pexels-photo-358238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+     </label>
+     <label>
+      <div class="post-like">
+        <span id="yön"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQGYTfDVuTekdw/profile-displayphoto-shrink_100_100/0/1646331015779?e=1658361600&v=beta&t=q7qEmOsLxTIkl8pTfXfWz5ehdoPY7WAou_DOhUxglcg"><h4>KAAN</h4></span>
+            <div class="post-like-kapsam">
+           <span><ion-icon name="heart-outline"></ion-icon><h5>145.K</h5></span>
+           <span><ion-icon name="chatbubbles-outline"></ion-icon><h5>184</h5></span>
+        </div>
+      </div>
+     </label>
+  </div>
+
+
+
+ <div class="post">
+     <label>
+      <img src="https://images.pexels.com/photos/1006121/pexels-photo-1006121.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+     </label>
+     <label>
+      <div class="post-like">
+        <span id="yön"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQFBBdcCYjK1QA/profile-displayphoto-shrink_100_100/0/1651148593484?e=1657756800&v=beta&t=tNrVffYWYBQ0w3VGkm8gmJgxDFsw_F5S8i5lLDj2yNw"><h4>MİCHEL</h4></span>
+
+        <div class="post-like-kapsam">
+           <span><ion-icon name="heart-outline"></ion-icon><h5>145.K</h5></span>
+           <span><ion-icon name="chatbubbles-outline"></ion-icon><h5>184</h5></span>
+        </div>
+      </div>
+     </label>
+  </div>
+
+
+
+ <div class="post">
+     <label>
+      <img src="https://images.pexels.com/photos/957089/veil-cases-waterfall-autumn-alpine-957089.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+     </label>
+     <label>
+      <div class="post-like">
+        <span id="yön"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQFGsEk7g-nQjg/profile-displayphoto-shrink_100_100/0/1575891316341?e=1657756800&v=beta&t=HvydHkFQIouynibdDhTxu0OoSJ0s5gy3qN3WoGmofe4"><h4>ALEX</h4></span>
+
+        <div class="post-like-kapsam">
+           <span><ion-icon name="heart-outline"></ion-icon><h5>145.K</h5></span>
+           <span><ion-icon name="chatbubbles-outline"></ion-icon><h5>184</h5></span>
+        </div>
+      </div>
+     </label>
+  </div>
+
+</div>
+
+
+
+
+
+   </section>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  const navopen = document.querySelector('.nav-open');
+  const nav = document.querySelector('nav');
+   const li = document.querySelectorAll('li');
+  function activeLink () {
+    li.forEach((item) =>
+    item.classList.remove('active'));
+    this.classList.add('active');
+  }
+  li.forEach((item) =>
+  item.addEventListener('click',activeLink));
+  navopen.addEventListener('click',() =>{
+    nav.classList.toggle('active');
+  })
+</script>
+</body>
+</html>
