@@ -57,8 +57,8 @@
     .story label img {width: 90px; height: 90px; border-radius: 50%; box-shadow:0 0 12px #477ac4; position: relative;}
     .story::-webkit-scrollbar {display: none;}
   section h2 {position:sticky;   left:520px; color:white; background: #477ac4; box-shadow: 0 0 12px #477ac4; width: 130px; height: 33px; border-radius: 6px; top:80px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-    .story h2:hover {transform: scale(1.03);}
-   section .stori {position:absolute;top: 76px; left: 10px;}
+  section h2:hover {transform: scale(1.03);}
+   section .stori {position:absolute;top: 76px; left: 10px; cursor: pointer; z-index: 1000;}
  
 
 
@@ -164,9 +164,16 @@
        .container-kapsam {width:100%;}
        section {width:80%; margin-left:79px; }
      }
+     @media only screen and (max-width:430px){
+     section .section-header .section-header-input{display: none;}
+     section .section-header-right label ion-icon{font-size: 30px;}
+     section .section-header-right label div span {width: 140px; height: 40px;}
+     section .section-header-right label {margin-left: 12px;}
+      section {width:76%; margin-left:75px; }
+     }
 </style>
 </head>
-<body>
+<body translate="no">
 <div class="container-ortala">
   <div class="container-kapsam">
     <nav>
